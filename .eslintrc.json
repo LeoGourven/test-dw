@@ -1,0 +1,14 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "next/core-web-vitals"
+    ],
+    "overrides": [
+        {
+            "files": ["prettier.config.js"],
+            "env": { "node": true }
+        }
+    ]
+}

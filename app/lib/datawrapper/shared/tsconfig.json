@@ -1,0 +1,14 @@
+{
+    "include": ["src", "test"],
+    "compilerOptions": {
+        "target": "ES6",
+        "declaration": true,
+        "declarationMap": true,
+        "module": "CommonJS",
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "sourceMap": true
+    }
+}

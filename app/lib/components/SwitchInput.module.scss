@@ -1,0 +1,56 @@
+$switch-width: 30px;
+$switch-height: 16px;
+$switch-margin: 10px;
+$paddle-inset: 2px;
+$paddle-size: $switch-height - ($paddle-inset * 2);
+
+.switch {
+    input {
+        display: none;
+    }
+    label {
+        position: relative;
+        cursor: pointer;
+        padding-left: calc($switch-width + $switch-margin);
+        margin-left: 2px;
+    }
+    label::before,
+    label:before {
+        width: $switch-width;
+        height: $switch-height;
+        border-radius: 24px;
+        position: absolute;
+        display: block;
+        top: 1px;
+        left: 0px;
+        border: 0.1rem solid transparent;
+        background: hsl(0, 0%, 71%);
+        content: '';
+        cursor: pointer;
+    }
+    label::after,
+    label:after {
+        display: block;
+        position: absolute;
+        top: $paddle-inset + 1px;
+        left: $paddle-inset + 1px;
+        width: $paddle-size;
+        height: $paddle-size;
+        border-radius: 50%;
+        background: hsl(0, 0%, 100%);
+        transition: all 0.25s ease-out;
+        content: '';
+        cursor: pointer;
+    }
+}
+
+.checked {
+    label::before,
+    label:before {
+        background: #18a1cd;
+    }
+    label::after,
+    label:after {
+        left: calc($switch-width - $paddle-size - $paddle-inset - 1px);
+    }
+}
