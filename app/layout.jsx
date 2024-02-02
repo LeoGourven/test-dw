@@ -1,6 +1,7 @@
 import { Roboto } from 'next/font/google';
 import './globals.scss';
 import { EditorContextProvider } from './lib/EditorContext';
+import { SettingsContextProvider } from './lib/SettingsContext';
 
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
@@ -15,7 +16,9 @@ export default function RootLayout({ children }) {
                 <script async="" src="http://localhost:8097"></script>
                 <div className="app">
                     <EditorContextProvider>
-                        <main>{children}</main>
+                        <SettingsContextProvider>
+                            <main>{children}</main>
+                        </SettingsContextProvider>
                     </EditorContextProvider>
                 </div>
                 <footer className="mt-6">
